@@ -101,6 +101,9 @@ function webform_to_gdocs_webform_submission_insert($node, $submission) {
 
     $google_row[$spreadsheet_column] = $insert_value;
   }
+  
+  $google_row['date'] = date('Y-m-d H:i:s');
+
   try {
     // Ensure we have a working access token.
     _webform_to_gdocs_google_drive_get_service();
